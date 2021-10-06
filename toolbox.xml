@@ -1,0 +1,56 @@
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+  <category name="Quantifier">
+    <block type="q_forall"></block>
+    <block type="q_exists"></block>
+    <block type="q_forallpairs"></block>
+  </category>
+  <category name="Selector">
+    <block type="s_findbyselector">
+      <field name="fbs_selector">#main</field>
+    </block>
+    <block type="s_findbyclass">
+      <field name="fbc_class">navlink</field>
+    </block>
+    <block type="s_findbyid">
+      <field name="fbc_class">main</field>
+    </block>
+  </category>
+  <category name="Condition">
+    <block type="c_comparetovalue">
+      <field name="cpt_value">0</field>
+    </block>
+    <block type="c_comparetwoelems"></block>
+    <block type="c_sameoffsettop"></block>
+  </category>
+  <category name="Property">
+    <block type="prop_width"></block>
+    <block type="prop_height"></block>
+    <block type="prop_offsettop"></block>
+    <block type="prop_color"></block>
+  </category>
+  <category name="Operator">
+    <block type="op_equal"></block>
+    <block type="op_greatherthan"></block>
+    <block type="op_greatherorequal"></block>
+    <block type="op_lesserthan"></block>
+    <block type="op_lesserorequal"></block>
+  </category>
+  <category name="Action">
+    <block type="a_delay">
+      <field name="delay_duration">0</field>
+    </block>
+    <block type="a_scroll">
+      <field name="x_scroll">0</field>
+      <field name="y_scroll">0</field>
+    </block>
+    <block type="a_click">
+      <field name="click_selector">#button</field>
+    </block>
+  </category>
+  <category name="Other">
+    <block type="testcase">
+      <field name="tc_description">Testing ...</field>
+    </block>
+    <block type="evaluation"></block>
+  </category>
+</xml>
