@@ -12,7 +12,7 @@ Blockly.Blocks['q_forallpairs'] = {
         .setCheck("Condition-2")
         .appendField("Condition");
     this.setPreviousStatement(true, "Quantifier");
-    this.setNextStatement(true, "Quantifier");
+    //this.setNextStatement(true, "Quantifier");
     this.setColour(20);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -30,7 +30,7 @@ Blockly.Blocks['q_forall'] = {
         .setCheck("Condition-1")
         .appendField("Condition");
     this.setPreviousStatement(true, "Quantifier");
-    this.setNextStatement(true, "Quantifier");
+    //this.setNextStatement(true, "Quantifier");
     this.setColour(20);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -48,7 +48,7 @@ Blockly.Blocks['q_exists'] = {
         .setCheck("Condition-1")
         .appendField("Condition");
     this.setPreviousStatement(true, "Quantifier");
-    this.setNextStatement(true, "Quantifier");
+    //this.setNextStatement(true, "Quantifier");
     this.setColour(20);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -64,7 +64,7 @@ Blockly.JavaScript['q_forallpairs'] = function(block) {
   var value_selector2 = Blockly.JavaScript.valueToCode(block, 'selector2', Blockly.JavaScript.ORDER_NONE);
   var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_NONE);
 
-  var code = 'f = dompp.ForAll(\n'
+  var code = 'dompp.ForAll(\n'
   + '"$x",\n'
   + value_selector1 + ',\n'
   + 'dompp.ForAll(\n'
@@ -72,7 +72,7 @@ Blockly.JavaScript['q_forallpairs'] = function(block) {
   + value_selector2 + ',\n'
   + value_condition + '\n'
   + ')'
-  + ');\n';
+  + ')';
   return code;
 };
 
@@ -80,11 +80,11 @@ Blockly.JavaScript['q_forall'] = function(block) {
   var value_selector = Blockly.JavaScript.valueToCode(block, 'selector', Blockly.JavaScript.ORDER_NONE);
   var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_NONE);
 
-  var code = 'f = dompp.ForAll(\n'
+  var code = 'dompp.ForAll(\n'
   + '"$x",\n'
   + value_selector + ',\n'
   + value_condition + '\n'
-  + ');\n';
+  + ')';
   return code;
 };
 
@@ -92,10 +92,10 @@ Blockly.JavaScript['q_exists'] = function(block) {
   var value_selector = Blockly.JavaScript.valueToCode(block, 'selector', Blockly.JavaScript.ORDER_NONE);
   var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_NONE);
 
-  var code = 'f = dompp.Exists(\n'
+  var code = 'dompp.Exists(\n'
   + '"$x",\n'
   + value_selector + ',\n'
   + value_condition + '\n'
-  + ');\n';
+  + ')';
   return code;
 };

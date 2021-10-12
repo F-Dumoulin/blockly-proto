@@ -30,11 +30,14 @@ Blockly.Blocks['testcase'] = {
 Blockly.JavaScript['evaluation'] = function(block) {
   var statements_eval = Blockly.JavaScript.statementToCode(block, 'eval');
 
-  var code = 'var result = await mb3dPage.evaluate(function() {\n'
+  var code = 'result = await mb3dPage.evaluate(function() {\n'
   + 'let body = document.querySelector("body");\n'
-  + 'var f;\n'
-  + statements_eval
-  + '});\n';
+  + 'let f = ' + statements_eval + ';\n'
+  + 'let cond = new dompp.TestCondition("...", f);\n'
+  + 'let result = cond.evaluate(body).getValue();\n'
+  + 'return result;\n'
+  + '});\n'
+  + 'expect(result).to.equal(true);\n'
   return code;
 };
 
@@ -43,6 +46,7 @@ Blockly.JavaScript['testcase'] = function(block) {
   var statements_actions = Blockly.JavaScript.statementToCode(block, 'actions');
 
   var code = 'it("' + text_tc_description + '", async() => {\n'
+  + 'var result;\n'
   + statements_actions
   + '});\n';
   return code;
